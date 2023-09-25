@@ -10,7 +10,7 @@
 			"name": "clients",
 			"item": [
 				{
-					"name": "GetAll",
+					"name": "getAll",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -42,13 +42,13 @@
 					"response": []
 				},
 				{
-					"name": "AddClient",
+					"name": "addClient",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"JUAN\",\r\n    \"lastName\": \"MARTINEZ\",\r\n    \"documentType\": \"CC\",\r\n    \"documentNumber\": \"1026150352\",\r\n    \"rut\": \"30.686.957-X\",\r\n    \"socialReason\": null,\r\n    \"fundationYear\": null,\r\n    \"clientType\": \"N\"\r\n}",
+							"raw": "{\r\n    \"name\": \"JUAN\",\r\n    \"lastName\": \"MARTINEZ\",\r\n    \"documentType\": \"CC\",\r\n    \"documentNumber\": \"1026150352\",\r\n    \"rut\": \"30.686.957-K\",\r\n    \"socialReason\": null,\r\n    \"fundationYear\": null,\r\n    \"clientType\": \"N\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -131,6 +131,72 @@
 							"path": [
 								"AccountController",
 								"addAccount"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "movements",
+			"item": [
+				{
+					"name": "getAll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/MovementController/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"MovementController",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addMovement",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"value\": 2000,\r\n        \"account\": {\r\n            \"id\": 10,\r\n            \"client\": {\r\n                \"id\": 8\r\n            }\r\n        }\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/MovementController/addMovement",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"MovementController",
+								"addMovement"
 							]
 						}
 					},
