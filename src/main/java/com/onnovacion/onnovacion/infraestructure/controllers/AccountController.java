@@ -11,9 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.onnovacion.onnovacion.application.services.interfaces.IAccountService;
-import com.onnovacion.onnovacion.application.services.interfaces.IClientService;
 import com.onnovacion.onnovacion.domain.accounts.dtos.AccountDTO;
-import com.onnovacion.onnovacion.domain.clients.dtos.ClientDTO;
 
 @RestController
 @RequestMapping("AccountController")

@@ -9,11 +9,6 @@ import com.onnovacion.onnovacion.domain.clients.Client;
 
 @Repository
 public interface IClientRepository extends JpaRepository<Client, Integer>{
-    
-    /**@Procedure(name = "ONNOVACION.FUNCTIONS.VALIDATEFIELDSINSERTONCLIENT")
-    String VALIDATEFIELDSINSERTONCLIENT (int id, String name,String lastName,
-    String documentType, String documentNumber, String rut, String socialReason, 
-    Integer fundationYear, String clientType);*/
 
     @Query(nativeQuery = true, value = 
     "SELECT ONNOVACION.FUNCTIONS.VALIDATEFIELDSINSERTONCLIENT(:id,:name,:lastName,:documentType,:documentNumber,:rut,:socialReason,:fundationYear,:clientType) FROM DUAL")

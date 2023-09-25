@@ -1,38 +1,18 @@
-package com.onnovacion.onnovacion.domain.movements;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
+package com.onnovacion.onnovacion.domain.movements.dtos;
 
 import com.onnovacion.onnovacion.domain.accounts.Account;
 
-@Entity
-@Table(name = "MOVEMENT")
-public class Movement {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ONNOVACION_MOVEMENT_id_seq")
-    @SequenceGenerator(name="ONNOVACION_MOVEMENT_id_seq", sequenceName = "ONNOVACION.MOVEMENT_id_seq", allocationSize=1)
-    @Column(name = "ID")
+public class MovementDTO {
+    
     private int id;
-
-    @Column(name = "VALUE")
     private int value;
-
-    @ManyToOne(fetch = FetchType.EAGER)
     private Account account;
 
-    public Movement() {
+    public MovementDTO() {
 
     }
 
-    public Movement(int id, int value, Account account) {
+    public MovementDTO(int id, int value, Account account) {
         this.id = id;
         this.value = value;
         this.account = account;
@@ -64,7 +44,7 @@ public class Movement {
 
     @Override
     public String toString() {
-        return "Movement [id=" + id + ", value=" + value + ", account=" + account + "]";
+        return "MovementDTO [id=" + id + ", value=" + value + ", account=" + account + "]";
     }
 
     @Override
@@ -85,7 +65,7 @@ public class Movement {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Movement other = (Movement) obj;
+        MovementDTO other = (MovementDTO) obj;
         if (id != other.id)
             return false;
         if (value != other.value)
